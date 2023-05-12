@@ -1,0 +1,9 @@
+name: Quiz_Game
+version: '${project.version}'
+main: me.shafi.quizgame.QuizGame
+api-version: 1.19
+commands:
+  quiz:
+    aliases:
+      - "q"
+    description: "command for quiz"
