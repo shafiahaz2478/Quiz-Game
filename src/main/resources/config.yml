@@ -19,7 +19,7 @@ quiz:
     "cat1 test 1":
       #this is the answer for question it will be provided in the options no matter how much options you have provided
       answer: "1_1"
-      #there are four option 'A' , 'B' , 'C' , 'D' atleast three options are madatory you can add more option so each player has different options
+      #there are four option 'A' , 'B' , 'C' , 'D' atleast three options are mandatory you can add more option so each player has different options
       options:
         - "1_3"
         - "1_2"
