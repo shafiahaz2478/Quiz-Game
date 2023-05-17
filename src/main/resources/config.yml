@@ -1,0 +1,85 @@
+#                   ╔═════ °• ♔ •° ═════╗
+#                         QUIZ GAME
+#                   ╚═════ °• ♔ •° ═════╝
+
+#this plugin requires mariadb to save player score
+mariadb:
+  host: "localhost"
+  port: "3316"
+  username: "root"
+  password: "password"
+  database: "plugins"
+#Used for countdown for player to give an answer
+seconds: 10
+#Used to provide question for the plugin
+quiz:
+  #this is for providing category for eg: cat1 means you can do (/quiz start cat1) to provide questions in cat1
+  cat1:
+    #this is for providing question so the first question will be this
+    "cat1 test 1":
+      #this is the answer for question it will be provided in the options no matter how much options you have provided
+      answer: "1_1"
+      #there are four option 'A' , 'B' , 'C' , 'D' atleast three options are madatory you can add more option so each player has different options
+      options:
+        - "1_3"
+        - "1_2"
+        - "2_1"
+    "cat1 test 2":
+      answer: "1_2"
+      options:
+        - "1_3"
+        - "1_1"
+        - "2_1"
+        - "2_4"
+    "cat1 test 3":
+      answer: "1_3"
+      options:
+        - "1_1"
+        - "1_2"
+        - "2_1"
+        - "2_4"
+        - "3_1"
+  cat2:
+    "cat2 test 1":
+      answer: "2_1"
+      options:
+        - "1_3"
+        - "1_2"
+        - "1_1"
+        - "2_4"
+    "cat2 test 2":
+      answer: "2_2"
+      options:
+        - "1_3"
+        - "1_1"
+        - "2_1"
+        - "2_4"
+    "cat2 test 3":
+      answer: "2_3"
+      options:
+        - "1_1"
+        - "1_2"
+        - "2_1"
+        - "2_4"
+  cat3:
+    "cat3 test 1":
+      answer: "3_1"
+      options:
+        - "1_3"
+        - "1_2"
+        - "2_1"
+        - "2_4"
+    "cat3 test 2":
+      answer: "3_2"
+      options:
+        - "1_3"
+        - "1_1"
+        - "2_1"
+        - "2_4"
+    "cat3 test 3":
+      answer: "3_3"
+      options:
+        - "1_1"
+        - "1_2"
+        - "2_1"
+        - "2_4"

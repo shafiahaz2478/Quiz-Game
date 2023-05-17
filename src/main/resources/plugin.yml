@@ -6,4 +6,4 @@ commands:
   quiz:
     aliases:
       - "q"
-    description: "command for quiz"
+    description: "do /quiz help for all the commands"
