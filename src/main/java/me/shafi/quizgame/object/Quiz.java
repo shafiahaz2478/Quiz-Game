@@ -71,6 +71,11 @@ public class Quiz implements Listener {
         Collections.shuffle(option);
         int answer_index = option.indexOf(answer);
 
+        if(answer_index > 3){
+            option.set(2  , answer);
+            answer_index = 2;
+        }
+
         switch (answer_index) {
             case 0 -> answers.add("A");
             case 1 -> answers.add("B");
