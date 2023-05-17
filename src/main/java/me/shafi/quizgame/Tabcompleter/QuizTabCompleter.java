@@ -25,7 +25,7 @@ public class QuizTabCompleter implements TabCompleter {
         if(args.length == 1){
             if(sender.hasPermission("quiz.admin")){
                 argument.add("start");
-                argument.add("Stop");
+                argument.add("stop");
             }
             argument.add("join");
             argument.add("score");
@@ -34,6 +34,7 @@ public class QuizTabCompleter implements TabCompleter {
                     result.add(a);
                 }
             }
+            return result;
         } else if (args.length == 2) {
             if(args[0].equalsIgnoreCase("start")){
                 argument.addAll(plugin.getConfig().getConfigurationSection("quiz").getKeys(false));

@@ -24,11 +24,12 @@ public class QuizCommand implements CommandExecutor {
             helpmsg.add("§6 Quiz Game Help");
             helpmsg.add("§a/quiz join - §6Join the current quiz event");
             helpmsg.add("§a/quiz score {player} - §6Get the player score if playername is not provided it will give your score");
-
+            if(p.hasPermission("quiz.admin")){
+                helpmsg.add("§a/quiz start {category_name} - §6Start a quiz event category name is required ");
+                helpmsg.add("§a/quiz stop - §6Stop the current quiz event");
+            }
             if(args.length >= 1) {
                 if(p.hasPermission("quiz.admin")) {
-                    helpmsg.add("§a/quiz start {category_name} - §6Start a quiz event category name is required ");
-                    helpmsg.add("§a/quiz stop - §6Stop the current quiz event");
                     if (args[0].equalsIgnoreCase("start")) {
                         if (plugin.quizManager != null) {
                             p.sendMessage("§c(!) §rtheres already a quiz running quiz");
@@ -50,11 +51,11 @@ public class QuizCommand implements CommandExecutor {
 
                         plugin.quizManager.endQuiz(p);
                         plugin.quizManager = null;
+                        return true;
                     } else if (args[0].equalsIgnoreCase("help")) {
                         p.sendMessage(helpmsg.toArray(String[]::new));
-                    } else {
-                        p.sendMessage(helpmsg.toArray(String[]::new));
                     }
+
                 }
 
 
@@ -75,8 +76,10 @@ public class QuizCommand implements CommandExecutor {
                         target = Bukkit.getPlayer(args[1]);
                     }
                     p.sendMessage(plugin.data.getLastQuizGameScores(target).toArray(String[]::new));
+                    return true;
                 }else {
                     p.sendMessage(helpmsg.toArray(String[]::new));
+                    return true;
                 }
             }else{
                 p.sendMessage(helpmsg.toArray(String[]::new));
